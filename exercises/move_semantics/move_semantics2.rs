@@ -8,7 +8,6 @@
 // for a hint.
 
 // I AM NOT DONE
-
 fn main() {
     let vec0 = Vec::new();
 
