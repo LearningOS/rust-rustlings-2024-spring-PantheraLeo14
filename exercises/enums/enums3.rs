@@ -4,11 +4,8 @@
 //
 // Execute `rustlings hint enums3` or use the `hint` watch subcommand for a
 // hint.
-
-// I AM NOT DONE
-
 enum Message {
-    Move{x: i32, y: i32},
+    Move(Point),
     Echo(String),
     ChangeColor(i32, i32, i32),
     Quit,
