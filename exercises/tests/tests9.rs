@@ -29,15 +29,22 @@
 
 // I AM NOT DONE
 
+
 extern "Rust" {
     fn my_demo_function(a: u32) -> u32;
     fn my_demo_function_alias(a: u32) -> u32;
 }
 
-mod Foo {
+mod foo {
     // No `extern` equals `extern "Rust"`.
+    #[no_mangle]
     fn my_demo_function(a: u32) -> u32 {
         a
+    }
+
+    #[no_mangle]
+    pub fn my_demo_function_alias(a: u32) -> u32 {
+        my_demo_function(a) // Alias simply forwards the call to the original function
     }
 }
 
