@@ -24,6 +24,18 @@ impl Default for Person {
     }
 }
 
+impl From<&str> for Person {
+    fn from(s : &str) -> Person {
+        let mut x = 30;
+        x = if s.len() == 0 {
+            0
+        };
+        Person {
+            name: String::from(s),
+            age:x,
+        }
+    }
+}
 // Your task is to complete this implementation in order for the line `let p =
 // Person::from("Mark,20")` to compile Please note that you'll need to parse the
 // age component into a `usize` with something like `"4".parse::<usize>()`. The
